@@ -58,22 +58,22 @@ For Software:
 <img width="1274" height="642" alt="procast2" src="https://github.com/user-attachments/assets/75556142-61f7-491f-b96c-6bb731165b91" />
 
 
-![Screenshot3](pop up)
+![Screenshot3] !(pop up)
 <img width="1498" height="586" alt="procast3" src="https://github.com/user-attachments/assets/595673c4-2cdb-4291-8f8a-3d988a884010" />
 
-![Screenshot4](quests)
+![Screenshot4] !(quests)
 <img width="1519" height="576" alt="procast4" src="https://github.com/user-attachments/assets/70af5faa-83ed-49cb-86c7-774d87752f79" />
 
-![Screenshot5](acheivements)
+![Screenshot5] !(acheivements)
 <img width="1398" height="682" alt="procast5" src="https://github.com/user-attachments/assets/85805c0c-f73a-4cfc-bd82-ddf9e9de063d" />
 
-![Screenshot6](worlds)
+![Screenshot6] !(worlds)
 <img width="1487" height="665" alt="procast6" src="https://github.com/user-attachments/assets/7378ce5b-8370-4abc-bd6e-d33c21a61a27" />
 
-![Screenshot7](leaderboard)
+![Screenshot7] !(leaderboard)
 <img width="1294" height="234" alt="procast7" src="https://github.com/user-attachments/assets/d499ed85-46de-435f-a0fc-471125fa877a" />
 
-![Screenshot8](acheivement poop up)
+![Screenshot8] !(acheivement poop up)
 <img width="1506" height="642" alt="procast8" src="https://github.com/user-attachments/assets/ca80de34-2220-4fe7-b910-5bcfbf38a541" />
 
 # Diagrams
