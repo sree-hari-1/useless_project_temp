@@ -78,27 +78,38 @@ For Software:
 
 # Diagrams
 ![Workflow]
-                   USER
+```text
+                    USER
                       ↓
           Select Procrastination Type
                       ↓
                  START TIMER
                       ↓
-           Track Time via app.js
+             Track Session Time
                       ↓
                   STOP TIMER
                       ↓
-               SAVE SESSION
+                SAVE SESSION
                       ↓
-        ┌─────────────┼─────────────┐
-        ↓             ↓             ↓
-   Categorize    Update World   Evaluate
-   Time & Stats    Progress   Achievements
-        └─────────────┬─────────────┘
+             Categorize Time
                       ↓
-           Trigger Notifications /
-             Leaderboard Update
-
+              Update Statistics
+                      ↓
+             Update World Progress
+                      ↓
+             Check Achievements
+                      ↓
+             Check World Unlock
+                      ↓
+          ┌───────────┴───────────┐
+          ↓                       ↓
+      Rewards                 Notifications
+          ↓                       ↓
+          └───────────┬───────────┘
+                      ↓
+                 Leaderboard
+```    
+             
 ### Project Demo
 # Video
 
