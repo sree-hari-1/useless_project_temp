@@ -6,92 +6,108 @@
 
 
 ## Basic Details
-### Team Name: [Name]
+### Team Name: [LEFTOVR]
 
 
 ### Team Members
-- Team Lead: [Name] - [College]
-- Member 2: [Name] - [College]
-- Member 3: [Name] - [College]
+- Team Lead: [Sreehari S] - [MAR ATHANASIUS  COLLEGE OF ENGINEERING, KOTHAMANGALAM]
 
 ### Project Description
-[2-3 lines about what your project does]
+Procrasti-Nation is a gamified procrastination analytics system that turns everyday time-wasting into categorized, measurable, and visualized data. Instead of trying to stop users from procrastinating, it lets them track their unproductive hours guilt-free to unlock useless virtual worlds, sarcastic achievements, and competitive leaderboards.
 
 ### The Problem (that doesn't exist)
-[What ridiculous problem are you solving?]
+Students regularly lose massive amounts of time to gaming, social media, videos, sleeping, and random distractions, but rarely know where their wasted hours actually go. Most productivity apps focus on blocking apps or forcing focus, leaving a tragic void: nobody is giving users detailed analytics on their own unproductivity.
 
 ### The Solution (that nobody asked for)
-[How are you solving it? Keep it fun!]
+Procrasti-Nation takes something everyone tries to avoid and turns it into a game worth losing at. Users select a procrastination category (Gaming, Sleep, Videos, Chatting, Social Media, or Food), start the timer, and slack off guilt-free. As time accumulates, the system unlocks themed virtual worlds like the Gaming Dungeon or Doomscroll City, rewards users with ridiculous achievements, and ranks them on an unproductivity leaderboard.
 
 ## Technical Details
 ### Technologies/Components Used
 For Software:
-- [Languages used]
-- [Frameworks used]
-- [Libraries used]
-- [Tools used]
+Languages: JavaScript / TypeScript, HTML5, CSS3
 
-For Hardware:
-- [List main components]
-- [List specifications]
-- [List tools required]
+Frameworks: React.js, Tailwind CSS, Node.js, Express.js
+
+Database: MongoDB / PostgreSQL
+
+Libraries: Chart.js (Analytics & Data Visualization), Lucide React (Icons), Canvas-Confetti (Unlock Animations)
+
+Tools: VS Code, Git, Postman
 
 ### Implementation
 For Software:
 # Installation
-[commands]
+bash
+git clone [https://github.com/sree-hari-1/useless_project_temp.git](https://github.com/sree-hari-1/useless_project_temp.git)
+cd useless_project_temp
+npm install
 
 # Run
-[commands]
+start index.htm
 
 ### Project Documentation
 For Software:
 
-# Screenshots (Add at least 3)
-![Screenshot1](Add screenshot 1 here with proper name)
-*Add caption explaining what this shows*
+# Screenshots 
+![Screenshot1]
+<img width="1527" height="692" alt="procast" src="https://github.com/user-attachments/assets/43e8582a-cef0-4a3b-829b-0609760adaed" />
 
-![Screenshot2](Add screenshot 2 here with proper name)
-*Add caption explaining what this shows*
 
-![Screenshot3](Add screenshot 3 here with proper name)
-*Add caption explaining what this shows*
+![Screenshot2]
+
+<img width="1274" height="642" alt="procast2" src="https://github.com/user-attachments/assets/75556142-61f7-491f-b96c-6bb731165b91" />
+
+
+![Screenshot3](pop up)
+<img width="1498" height="586" alt="procast3" src="https://github.com/user-attachments/assets/595673c4-2cdb-4291-8f8a-3d988a884010" />
+
+![Screenshot4](quests)
+<img width="1519" height="576" alt="procast4" src="https://github.com/user-attachments/assets/70af5faa-83ed-49cb-86c7-774d87752f79" />
+
+![Screenshot5](acheivements)
+<img width="1398" height="682" alt="procast5" src="https://github.com/user-attachments/assets/85805c0c-f73a-4cfc-bd82-ddf9e9de063d" />
+
+![Screenshot6](worlds)
+<img width="1487" height="665" alt="procast6" src="https://github.com/user-attachments/assets/7378ce5b-8370-4abc-bd6e-d33c21a61a27" />
+
+![Screenshot7](leaderboard)
+<img width="1294" height="234" alt="procast7" src="https://github.com/user-attachments/assets/d499ed85-46de-435f-a0fc-471125fa877a" />
+
+![Screenshot8](acheivement poop up)
+<img width="1506" height="642" alt="procast8" src="https://github.com/user-attachments/assets/ca80de34-2220-4fe7-b910-5bcfbf38a541" />
 
 # Diagrams
-![Workflow](Add your workflow/architecture diagram here)
-*Add caption explaining your workflow*
-
-For Hardware:
-
-# Schematic & Circuit
-![Circuit](Add your circuit diagram here)
-*Add caption explaining connections*
-
-![Schematic](Add your schematic diagram here)
-*Add caption explaining the schematic*
-
-# Build Photos
-![Components](Add photo of your components here)
-*List out all components shown*
-
-![Build](Add photos of build process here)
-*Explain the build steps*
-
-![Final](Add photo of final product here)
-*Explain the final build*
+![Workflow]
+                   USER
+                      ↓
+          Select Procrastination Type
+                      ↓
+                 START TIMER
+                      ↓
+           Track Time via app.js
+                      ↓
+                  STOP TIMER
+                      ↓
+               SAVE SESSION
+                      ↓
+        ┌─────────────┼─────────────┐
+        ↓             ↓             ↓
+   Categorize    Update World   Evaluate
+   Time & Stats    Progress   Achievements
+        └─────────────┬─────────────┘
+                      ↓
+           Trigger Notifications /
+             Leaderboard Update
 
 ### Project Demo
 # Video
-[Add your demo video link here]
-*Explain what the video demonstrates*
+
 
 # Additional Demos
 [Add any extra demo materials/links]
 
 ## Team Contributions
-- [Name 1]: [Specific contributions]
-- [Name 2]: [Specific contributions]
-- [Name 3]: [Specific contributions]
+- [Sreehari S]:Timer state logic, session data processing backend, and leaderboard architecture. World progression UI, achievement unlock system, and world maps design. Chart.js implementation for statistics visualization, styling with Tailwind CSS, and reverse-psychology notification engine.
 
 ---
 Made with ❤️ at TinkerHub Useless Projects 
