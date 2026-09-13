@@ -1,1 +1,349 @@
 
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Procrasti-Nation 🐌</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="game-shell">
+      <aside class="sidebar pixel-panel">
+        <div class="brand-box">
+          <div class="brand-icon">🐌</div>
+          <div>
+            <div class="brand-title">PROCRASTI-NATION</div>
+            <div class="brand-sub">LAND OF MISSED DEADLINES</div>
+          </div>
+        </div>
+
+        <nav class="nav-list">
+          <button class="nav active" data-page="dashboard">🏠 OVERVIEW</button>
+          <button class="nav" data-page="tasks">📋 QUESTS</button>
+          <button class="nav" data-page="history">⏱️ JOURNAL</button>
+          <button class="nav" data-page="achievements">🏆 BADGES</button>
+          <button class="nav" data-page="world">🗺️ WORLD</button>
+          <button class="nav" data-page="leaderboard">📊 RANKINGS</button>
+          <button class="nav" data-page="insights">🤖 NPC</button>
+          <button class="nav" data-page="notifications">🔔 ALERTS</button>
+        </nav>
+
+        <div class="sidebar-status pixel-panel-inset">
+          <div class="tiny-label">STATUS</div>
+          <div id="sideStatus">Idle. The deadline is trembling.</div>
+        </div>
+      </aside>
+
+      <main class="main-content">
+        <header class="topbar">
+          <div>
+            <div class="tiny-label">WELCOME BACK, CHAMP</div>
+            <h1 id="pageTitle">Overview</h1>
+          </div>
+          <div class="top-actions">
+            <div class="world-badge" id="topWorldBadge" title="Your current world"><span id="topWorldBadgeIcon">🏠</span><span id="topWorldBadgeName">BEDROOM</span></div>
+            <button class="pixel-btn secondary" id="authButton">REGISTER / LOGIN</button>
+            <button class="pixel-btn secondary" id="notifyPermissionBtn">ENABLE ALERTS</button>
+            <div class="status-pill" id="livePill">● READY</div>
+          </div>
+        </header>
+
+        <section id="dashboard" class="page active">
+          <div class="world-home" id="worldHome">
+            <div class="sun-glow"></div>
+            <div class="world-cloud cloud-a">☁</div><div class="world-cloud cloud-b">☁</div><div class="world-cloud cloud-c">☁</div>
+            <div id="worldEnvironment" class="world-environment" aria-hidden="true"></div>
+            <div class="world-session-hud hidden" aria-live="polite">
+              <div class="tiny-label">CURRENT SESSION</div>
+              <div id="worldTimer">00:00:00</div>
+              <div id="worldTimerReason">No excuse selected.</div>
+              <button class="pixel-btn danger" id="worldStopBtn" disabled>STOP</button>
+            </div>
+            <div class="world-title"><div class="tiny-label">WELCOME TO</div><h2 id="worldTitleName">PROCRASTI-NATION</h2><p id="worldTitleTag">THE BRIGHTEST PLACE TO AVOID YOUR RESPONSIBILITIES</p></div>
+            <div class="world-land">
+              <button type="button" class="world-location loc-quest" data-location="quest" data-go="tasks"><span>🏰</span><b>QUEST CASTLE</b><small>Things you should be doing</small></button>
+              <button type="button" class="world-location loc-journal" data-location="journal" data-go="history"><span>📜</span><b>WASTE ARCHIVE</b><small>Your glorious history</small></button>
+              <button type="button" class="world-location loc-badges" data-location="badges" data-go="achievements"><span>🏆</span><b>BADGE TEMPLE</b><small>Divine procrastination</small></button>
+              <button type="button" class="world-location loc-npc" data-location="npc" data-go="insights"><span>🤖</span><b>PROFESSOR'S LAB</b><small>He has concerns</small></button>
+              <button type="button" class="world-location loc-rank" data-location="rank" data-go="leaderboard"><span>🏅</span><b>GLORY BOARD</b><small>Compete to waste more</small></button>
+              <button type="button" class="world-location loc-alert" data-location="alert" data-go="notifications"><span>🔔</span><b>ALERT TOWER</b><small>Ignore responsibly</small></button>
+              <div class="procrastinate-shrine">
+                <div class="shrine-aura"></div>
+                <div class="shrine-sign">THE SACRED BUTTON</div>
+                <button type="button" class="world-procrastinate" id="worldStartBtn"><span>🛋️</span> PROCRASTINATE</button>
+                <div class="shrine-caption">CLICK HERE TO ABSOLUTELY NOT WORK</div>
+                <div class="snail-world">🐌</div>
+              </div>
+            </div>
+            <div class="world-ground"><span>🌱</span><span>🌿</span><span>🌱</span><span>🍀</span><span>🌿</span><span>🌱</span><span>🌿</span></div>
+          </div>
+          <div class="world-hidden-dashboard">
+          <div class="hero panel">
+            <div class="hero-copy">
+              <div class="tiny-label">PLAYER PROFILE</div>
+              <div class="player-name">YOU</div>
+              <div class="level-row">
+                <span>LV. <span id="playerLevel">1</span></span>
+                <span id="playerRank">NOVICE SLACKER</span>
+              </div>
+              <div class="xp-box">
+                <div class="xp-line"><span>XP</span><span id="xpText">0 / 1000</span></div>
+                <div class="xp-bar"><div id="xpBar"></div></div>
+              </div>
+              <div class="quest-box">
+                <div class="tiny-label">CURRENT QUEST</div>
+                <div id="activeQuest">Study Data Structures</div>
+                <div class="quest-sub" id="questMeta">Deadline: 2 hours</div>
+              </div>
+              <button class="pixel-btn primary" id="startBtn">PROCRASTINATE</button>
+              <div class="timer-block hidden">
+                <div class="tiny-label">CURRENT SESSION</div>
+                <div id="timer">00:00:00</div>
+                <div id="timerReason">No excuse selected.</div>
+                <button class="pixel-btn danger" id="stopBtn" disabled>STOP</button>
+              </div>
+            </div>
+
+            <div class="snail-scene pixel-panel-inset">
+              <div class="snail-wrap">
+                <div class="snail pixel-art">
+                  <div class="shell"></div>
+                  <div class="body"></div>
+                  <div class="eyes"></div>
+                </div>
+              </div>
+              <div class="tiny-label">PROCRASTINATION HP</div>
+              <div class="hp-box">
+                <span>HP</span>
+                <div class="hp-bar"><div id="hpBar"></div></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="stats-grid">
+            <div class="stat-box pixel-panel">
+              <div class="tiny-label">TOTAL WASTED</div>
+              <div id="totalTime" class="stat-value">0s</div>
+            </div>
+            <div class="stat-box pixel-panel">
+              <div class="tiny-label">SESSIONS</div>
+              <div id="sessionCount" class="stat-value">0</div>
+            </div>
+            <div class="stat-box pixel-panel">
+              <div class="tiny-label">AVG. SESSION</div>
+              <div id="avgTime" class="stat-value">0m</div>
+            </div>
+            <div class="stat-box pixel-panel">
+              <div class="tiny-label">TOP EXCUSE</div>
+              <div id="topReason" class="stat-value">—</div>
+            </div>
+          </div>
+
+          <div class="lower-grid">
+            <div class="panel">
+              <div class="panel-head">
+                <h3>RECENT BATTLES</h3>
+                <button class="pixel-btn small" data-go="history">VIEW</button>
+              </div>
+              <div id="recentList" class="list"></div>
+            </div>
+
+            <div class="panel">
+              <div class="panel-head">
+                <h3>PLAYER CARD</h3>
+              </div>
+              <div class="profile-box">
+                <div class="profile-avatar">🐌</div>
+                <div>
+                  <div id="profileTitle" class="profile-title">NOVICE SLACKER</div>
+                  <p id="profileText">Start a session to discover your true potential.</p>
+                </div>
+              </div>
+              <div class="quote-box" id="quote">“You don't need motivation. You need another five minutes.”</div>
+              <div id="achievementLadder" class="ladder"></div>
+            </div>
+          </div>
+
+          <div class="panel notifications-panel">
+            <div class="panel-head">
+              <h3>NOTIFICATION LOG</h3>
+              <button class="pixel-btn small" data-go="notifications">OPEN</button>
+            </div>
+            <div id="dashboardNotifications" class="notification-list"></div>
+          </div>
+          </div>
+        </section>
+
+        <section id="tasks" class="page">
+          <div class="panel">
+            <div class="panel-head">
+              <h3>QUEST BOARD</h3>
+            </div>
+            <form id="taskForm" class="task-form">
+              <input id="taskInput" placeholder="e.g. Study Data Structures" required />
+              <input type="datetime-local" id="deadlineInput" aria-label="Task deadline" />
+              <select id="priority">
+                <option>Normal</option>
+                <option>High</option>
+                <option>Low</option>
+              </select>
+              <button class="pixel-btn primary">ADD QUEST</button>
+            </form>
+            <div id="taskList" class="task-list"></div>
+          </div>
+        </section>
+
+        <section id="history" class="page">
+          <div class="panel">
+            <div class="panel-head">
+              <h3>PROCRASTINATION JOURNAL</h3>
+              <button class="pixel-btn small danger" id="clearHistory">ERASE</button>
+            </div>
+            <div id="historyList" class="list"></div>
+          </div>
+        </section>
+
+        <section id="achievements" class="page">
+          <div class="panel">
+            <div class="panel-head">
+              <h3>COLLECTIBLE BADGES</h3>
+              <button class="pixel-btn small secondary" id="achievementDemoBtn" type="button">DEMO SHOWCASE</button>
+            </div>
+            <div id="achievementDemoStatus" class="demo-status hidden">DEMO MODE: ALL ACHIEVEMENTS AND WORLDS UNLOCKED FOR SHOWCASE</div>
+            <div id="achievementGrid" class="achievement-grid"></div>
+          </div>
+        </section>
+
+        <section id="world" class="page">
+          <div class="panel">
+            <div class="panel-head">
+              <h3>PROCRASTINATION WORLD</h3>
+              <div class="status-badge">⭐ CURRENT WORLD: <span id="currentWorldLabel">🏠 Bedroom</span></div>
+            </div>
+            <p class="world-intro">Your habits build the map. Spend one hour in a category to discover its world.</p>
+            <div id="worldMap" class="world-map" tabindex="0" aria-label="World map. Use arrow keys to move between worlds."></div>
+          </div>
+        </section>
+
+        <section id="leaderboard" class="page">
+          <div class="panel">
+            <div class="panel-head">
+              <h3>RANKINGS</h3>
+              <div id="leaderboardStatus" class="status-badge">OFFLINE MODE</div>
+            </div>
+            <div id="leaderboardList" class="leaderboard-list"></div>
+          </div>
+        </section>
+
+        <section id="insights" class="page">
+          <div class="npc-box">
+            <div class="npc-header">
+              <div class="npc-avatar">🤖</div>
+              <div>
+                <div class="tiny-label">NPC ANALYST</div>
+                <h2>PROFESSOR PROCRASTINATOR</h2>
+              </div>
+            </div>
+            <div id="aiInsight" class="npc-dialogue"></div>
+          </div>
+        </section>
+
+        <section id="notifications" class="page">
+          <div class="panel">
+            <div class="panel-head">
+              <h3>ALERT CENTER</h3>
+              <button class="pixel-btn small danger" id="clearNotifications">CLEAR</button>
+            </div>
+            <div id="notificationList" class="notification-list"></div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <div class="modal hidden" id="reasonModal">
+      <div class="dialog-box pixel-panel">
+        <button class="close-btn" id="closeModal">×</button>
+        <div class="tiny-label">SYSTEM MESSAGE</div>
+        <h2>WHY ARE YOU PROCRASTINATING?</h2>
+
+        <div class="reason-grid">
+          <button data-reason="Social media">📱 SOCIAL MEDIA</button>
+          <button data-reason="Gaming">🎮 GAMING</button>
+          <button data-reason="Videos">🎬 YOUTUBE</button>
+          <button data-reason="Sleeping">😴 SLEEPING</button>
+          <button data-reason="Eating">🍔 EATING</button>
+          <button data-reason="Chatting">💬 CHAT</button>
+          <button data-reason="Other">🤷 OTHER</button>
+        </div>
+
+        <div id="customReasonWrap" class="custom-reason hidden">
+          <label for="customReasonInput">TYPE YOUR MASTERPIECE</label>
+          <input id="customReasonInput" type="text" maxlength="80" placeholder="e.g. I need to reorganize my bookmarks for morale" />
+          <button class="pixel-btn primary" id="customReasonSubmit">USE THIS EXCUSE</button>
+          <div id="customReasonError" class="reason-error hidden"></div>
+        </div>
+
+        <label class="checkbox-row"><input type="checkbox" id="quickFiveCheck" /> QUICK 5-MINUTE ESCAPE</label>
+        <div class="task-picker">
+          <label>QUEST BEING AVOIDED</label>
+          <select id="taskPicker"><option value="">Nothing specific (even better)</option></select>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal hidden" id="authModal">
+      <div class="dialog-box pixel-panel auth-box">
+        <button class="close-btn" id="closeAuthModal">×</button>
+        <div class="auth-cloud auth-cloud-one">☁</div>
+        <div class="auth-cloud auth-cloud-two">☁</div>
+        <div class="auth-brand">
+          <div class="auth-brand-icon">🐌</div>
+          <div>
+            <div class="auth-brand-title">PROCRASTI-NATION</div>
+            <div class="auth-brand-sub">LAND OF MISSED DEADLINES</div>
+          </div>
+        </div>
+        <p id="authQuote" class="auth-quote"></p>
+        <div class="tiny-label">ACCESS GATE</div>
+        <h2 id="authTitle">LOGIN</h2>
+
+        <div class="auth-tabs">
+          <button class="auth-tab active" data-auth="login">LOGIN</button>
+          <button class="auth-tab" data-auth="register">REGISTER</button>
+        </div>
+
+        <form id="authForm" class="auth-form">
+          <input id="authName" type="text" placeholder="USERNAME" required />
+          <input id="authPassword" type="password" placeholder="PASSWORD" required />
+          <button class="pixel-btn primary" type="submit" id="authSubmitBtn">LOGIN</button>
+        </form>
+        <div id="authMessage" class="reason-error hidden"></div>
+      </div>
+    </div>
+
+    <div class="toast" id="toast"></div>
+    <div id="worldReaction" class="world-reaction hidden" aria-live="polite">
+      <div id="worldReactionDecor" class="world-reaction-decor"></div>
+      <div id="worldReactionMessage" class="world-reaction-message">EXCELLENT DECISION!</div>
+    </div>
+    <div id="achievementCelebration" class="achievement-celebration hidden">
+      <div class="trumpet trumpet-left">📯</div>
+      <div class="trumpet trumpet-right">📯</div>
+      <div class="light-rays"></div>
+      <div class="achievement-scroll">
+        <div class="scroll-holes"></div>
+        <div class="tiny-label">A DIVINE INTERRUPTION</div>
+        <div class="scroll-heading">🏆 ACHIEVEMENT UNLOCKED 🏆</div>
+        <div id="celebrationTitle" class="celebration-title">COUCH POTATO</div>
+        <div id="celebrationDetail" class="celebration-detail">The heavens are disappointed.</div>
+        <div id="celebrationFx" class="celebration-fx">✨ ✨ ✨</div>
+      </div>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
